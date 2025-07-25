@@ -1,4 +1,5 @@
 {
+  "name": "roostered",
   "private": true,
   "type": "module",
   "scripts": {
