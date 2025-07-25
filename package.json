@@ -6,7 +6,8 @@
     "build": "react-router build && node netlify/prepare.js",
     "dev": "cross-env NODE_ENV=development node ./dev-server.js",
     "start": "netlify serve",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "postinstall": "prisma migrate deploy && prisma generate --no-engine"
   },
   "dependencies": {
     "@epic-web/remember": "^1.1.0",

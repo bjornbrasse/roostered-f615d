@@ -1,9 +1,11 @@
+import { redirect } from "react-router"
 import {type Route} from "../../.react-router/types/app/routes/+types/bjorn.ts"
 import { prisma } from "~/utils/db.server.ts"
 
 
 export async function loader() {
   const user = await prisma.user.findFirst({where: {id: '1'}})
+  if(!user) return redirect("/")
   return {user}
 }
 
